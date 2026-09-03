@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="FlightSales.Application/FlightSales.Application.csproj" />
+  <Project Path="FlightSales.Domain/FlightSales.Domain.csproj" />
+  <Project Path="FlightSales.Infrastructure/FlightSales.Infrastructure.csproj" />
+  <Project Path="FlightSales/flightsales.client/flightsales.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="FlightSales/FlightSales.Server/FlightSales.Server.csproj" />
+</Solution>
