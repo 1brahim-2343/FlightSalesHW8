@@ -1,8 +1,7 @@
 ﻿using FlightSales.Application.Commons.Models;
 using FlightSales.Domain.Entities;
 
-
-namespace FlightSales.Infrastructure.Repositories.Abstract
+namespace FlightSales.Application.Interfaces.Repositories
 {
     public interface IFlightRepository
     {

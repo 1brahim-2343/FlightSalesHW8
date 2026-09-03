@@ -1,7 +1,7 @@
 ﻿using FlightSales.Application.Commons.Models;
 using FlightSales.Domain.Entities;
 using FlightSales.Infrastructure.Persistence;
-using FlightSales.Infrastructure.Repositories.Abstract;
+using FlightSales.Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace FlightSales.Infrastructure.Repositories
