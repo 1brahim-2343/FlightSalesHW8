@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlightSales.Domain.Enums
+namespace FlightSales.Application.Interfaces.Services
 {
-    public enum Ticket
+    public interface IFlightTicketService
     {
-        Economy,
-        PremiumEconomy,
-        Business,
-        First
     }
 }
