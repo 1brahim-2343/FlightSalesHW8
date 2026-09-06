@@ -23,12 +23,14 @@ namespace FlightSales.Server.Controllers
         }
 
         [HttpGet("{id:guid}", Name = "GetAsync")]
-        public async Task<ActionResult<IEnumerable<FlightTicketDto>>> GetAsync(Guid id)
+        public async Task<ActionResult<FlightTicketDto>> GetAsync(Guid id)
         {
-            var serviceFlightTickets = await _ticketService.GetAsync(id);
-            var flightsTicketsDto = _mapper.Map<IEnumerable<FlightTicketDto>>(serviceFlightTickets);
+            var serviceFlightTicket = await _ticketService.GetAsync(id);
+            if (serviceFlightTicket == null) return NotFound();
 
-            return Ok(flightsTicketsDto);
+            var flightTicketDto = _mapper.Map<FlightTicketDto>(serviceFlightTicket);
+
+            return Ok(flightTicketDto);
         }
 
         [HttpPost]
