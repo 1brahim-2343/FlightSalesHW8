@@ -22,7 +22,7 @@ namespace FlightSales.Server.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}", Name = "GetAsync")]
         public async Task<ActionResult<IEnumerable<FlightTicketDto>>> GetAsync(Guid id)
         {
             var serviceFlightTickets = await _ticketService.GetAsync(id);

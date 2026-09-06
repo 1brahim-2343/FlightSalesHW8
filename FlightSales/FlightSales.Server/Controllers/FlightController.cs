@@ -31,7 +31,7 @@ namespace FlightSales.Server.Controllers
             return Ok(flightsDto);
         }
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}", Name = "GetByIdAsync")]
         public async Task<ActionResult<FlightDto>> GetByIdAsync(Guid id)
         {
             var flight = await _flightService.GetAsync(id);
