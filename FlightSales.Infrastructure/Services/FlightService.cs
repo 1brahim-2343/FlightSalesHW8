@@ -1,3 +1,4 @@
+using FlightSales.Application.Commons.Models;
 using FlightSales.Application.Interfaces.Repositories;
 using FlightSales.Application.Interfaces.Services;
 using FlightSales.Domain.Entities;
@@ -43,6 +44,42 @@ public class FlightService : IFlightService
 
     public string GetDestinationCity(Flight flight)
     {
-        throw new NotImplementedException();
+        var destination = flight.Destination;
+        var destinationCity = destination
+            .Split("|")[1].Trim()
+            .Split(",")[0].Trim();
+        return destinationCity;
+    }
+
+    public string GetDestinationCountry(Flight flight)
+    {
+        var destination = flight.Destination;
+        var destinationCountry = destination
+            .Split("|")[1].Trim()
+            .Split(",")[1].Trim();
+        return destinationCountry;
+    }
+
+    public string GetOriginCity(Flight flight)
+    {
+        var origin = flight.Origin;
+        var originCity = origin
+            .Split("|")[1].Trim()
+            .Split(",")[0].Trim();
+        return originCity;
+    }
+
+    public string GetOriginCountry(Flight flight)
+    {
+        var origin = flight.Origin;
+        var originCountry = origin
+            .Split("|")[1].Trim()
+            .Split(",")[1].Trim();
+        return originCountry;
+    }
+
+    public async Task<PagedResult<Flight>> GetAllPagedAsync(int pageNumber, int pageSize)
+    {
+        return await _flightRepo.GetAllPagedResultAsync(pageNumber, pageSize);
     }
 }

@@ -1,4 +1,5 @@
-﻿using FlightSales.Domain.Enums;
+﻿using FlightSales.Application.Commons.DTOs.Flight;
+using FlightSales.Domain.Enums;
 
 namespace FlightSales.Application.Commons.DTOs.Ticket
 {
@@ -10,6 +11,7 @@ namespace FlightSales.Application.Commons.DTOs.Ticket
         public required string Origin { get; set; }
         public required string Destination { get; set; }
         public DateTime DepartureTime { get; set; }
+        public required FlightDto Flight { get; set; }
 
     }
 }

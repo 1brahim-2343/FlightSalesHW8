@@ -29,14 +29,11 @@ namespace FlightSales.Infrastructure.Repositories
             return (await _context.SaveChangesAsync()) > 0;
         }
 
-        public async Task<List<FlightTicket>> GetAsync()
-        {
-            return await _context.Tickets.ToListAsync();
-        }
-
         public async Task<FlightTicket?> GetAsync(Guid id)
         {
-            var ticket = await _context.Tickets.SingleOrDefaultAsync(t => t.Id == id);
+            var ticket = await _context.Tickets
+                .Include(fT=>fT.Flight)
+                .SingleOrDefaultAsync(t => t.Id == id);
             return ticket;
         }
 
