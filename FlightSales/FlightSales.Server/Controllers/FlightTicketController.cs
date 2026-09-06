@@ -55,10 +55,9 @@ namespace FlightSales.Server.Controllers
             var flightTicket = await _ticketService.GetAsync(id);
             if (flightTicket == null) return NotFound();
 
-            var deletedTicket = await _ticketService.DeleteAsync(flight);
+            var deletedTicket = await _ticketService.DeleteAsync(flightTicket);
 
-            return Ok(var deletedTicket = await _ticketService.DeleteAsync(flight);
-);
+            return Ok(deletedTicket);
         }
 
     }
