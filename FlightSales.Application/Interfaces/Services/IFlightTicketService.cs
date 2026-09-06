@@ -12,6 +12,5 @@ namespace FlightSales.Application.Interfaces.Services
         Task<FlightTicket?> GetAsync(Guid id);
         Task<FlightTicket> AddAsync(FlightTicket ticket);
         Task<bool> DeleteAsync(FlightTicket ticket);
-        Task<FlightTicket> UpdateAsync(FlightTicket ticket);
     }
 }

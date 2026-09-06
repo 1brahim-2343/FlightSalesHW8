@@ -31,8 +31,4 @@ public class FlightTicketService : IFlightTicketService
         return await _flightTicketRepo.GetAsync(id);
     }
 
-    public async Task<FlightTicket> UpdateAsync(FlightTicket ticket)
-    {
-        return await _flightTicketRepo.UpdateAsync(ticket);
-    }
 }

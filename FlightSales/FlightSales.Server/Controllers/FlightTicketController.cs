@@ -41,7 +41,7 @@ namespace FlightSales.Server.Controllers
            
             var newFlightTicket = await _ticketService.AddAsync(flightTicket);
 
-            var newFlightTicketDto = _mapper.Map<FlightDto>(newFlightTicket);
+            var newFlightTicketDto = _mapper.Map<FlightTicketDto>(newFlightTicket);
 
             return CreatedAtRoute("GetAsync", new
             {

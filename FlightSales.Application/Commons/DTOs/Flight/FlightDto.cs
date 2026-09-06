@@ -4,6 +4,7 @@ namespace FlightSales.Application.Commons.DTOs.Flight
 {
     public class FlightDto
     {
+        public Guid Id { get; set; }
         public required string Origin { get; set; }
         public required string Destination { get; set; }
         public required string OriginCountry { get; set; }

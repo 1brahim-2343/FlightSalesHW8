@@ -5,6 +5,7 @@ namespace FlightSales.Application.Commons.DTOs.Ticket
 {
     public class FlightTicketDto
     {
+        public Guid Id { get; set; }
         public TicketClass Class { get; set; }
         public required string PassengerFullname { get; set; }
         public decimal Price { get; set; }
